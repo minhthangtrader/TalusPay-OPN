@@ -1,5 +1,16 @@
-Tên dự án: TalusPay - Decentralized Payment on OPN Chain.
-Mô tả ngắn: Ứng dụng thanh toán và lưu trữ tài sản phi tập trung trên OPN Chain.
-Smart Contract Address: 0xB6Ec96EC61892aF07A0EaB37bAD9f95be3317B3A
-https://testnet.iopn.tech/tx/0x31f244e17afef4a8da7656f8253cca33e5a80be37eca113c705ec88b0cfab519
-Đã tích hợp hàm sendPayment xử lý luồng thanh toán thực tế onchain.
+# TalusPay - Open Finance Payment App
+
+TalusPay is a permissionless, decentralized payment and self-custody application built on OPN Chain.
+
+## 🚀 Key Features
+- **Direct Settlement:** Send OPN native tokens directly through verified smart contracts.
+- **On-chain Proof:** Every payment emits standard events on-chain for real-time tracking.
+- **Clean UX:** Simple and intuitive wallet-based UI.
+
+## 📜 Deployed Contracts
+- **Payment Vault Contract:** `0x2870953ba98817B30490c86fa808Cb413bEbE83D`
+
+## 🛠 Tech Stack
+- Solidity ^0.8.20
+- Ethers.js v5
+- TailwindCSS & HTML5
