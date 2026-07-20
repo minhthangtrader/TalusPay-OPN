@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract TalusPayVault {
+    // Sự kiện ghi nhận khi có giao dịch thanh toán thành công
+    event PaymentSent(address indexed sender, address indexed receiver, uint256 amount, string note);
+
+    // Hàm thực hiện chuyển OPN native token từ người gửi đến người nhận
+    function sendPayment(address payable _receiver, string memory _note) external payable {
+        require(msg.value > 0, "So tien phai lon hon 0");
+        require(_receiver != address(0), "Dia chi nguoi nhan khong hop le");
+
+        // Chuyển tiền trực tiếp đến ví người nhận
+        (bool success, ) = _receiver.call{value: msg.value}("");
+        require(success, "Chuyen tien that bai");
+
+        // Phát ra event để Block Explorer và Frontend ghi nhận
+        emit PaymentSent(msg.sender, _receiver, msg.value, _note);
+    }
+}
